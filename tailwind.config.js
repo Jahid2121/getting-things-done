@@ -5,8 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'customOrange':  '#F19828',
+      }
+    },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+    require('flowbite/plugin')
+  ],
 }
 
