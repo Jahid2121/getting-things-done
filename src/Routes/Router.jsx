@@ -7,6 +7,7 @@ import Dashboard from "../LayOut/Dashboard";
 import Profile from "../Pages/Profile/Profile";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import Task from "../Pages/Task/Task";
 
 
 
@@ -44,7 +45,11 @@ export const router = createBrowserRouter([
         {
           path: '/dashboard',
           element: <Profile />
-        }
+        },
+        {
+          path: '/dashboard/task',
+          element: <Task />
+        },
       ]
     }
   ]);

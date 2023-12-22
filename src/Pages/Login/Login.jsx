@@ -1,12 +1,17 @@
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
+import { FaGoogle } from "react-icons/fa";
 
 
 const Login = () => {
-    const {logIn} = UseAuth()
+    const {logIn, googleLogin} = UseAuth()
     const navigate = useNavigate();
     const location = useLocation()
+    
+    const handleGoogleLogin = () => {
+        googleLogin()
+    }
 
 
     const from = location.state?.from?.pathname || '/'
@@ -74,7 +79,6 @@ const Login = () => {
           {errors.password?.type === "required" && (
             <p className="text-red-800">Password is required</p>
           )}
-         
         </div>
         <div className="" >
         </div>
@@ -87,6 +91,14 @@ const Login = () => {
             id=""
           />
           
+         <div onClick={handleGoogleLogin} className="flex hover:cursor-pointer items-center gap-3 border mt-3 ">
+         <div className="text-2xl m-2">
+         <FaGoogle /> 
+         </div>
+         <span>
+         Login With Google
+         </span>
+         </div>
     <div className="flex justify-center">
     </div>
         </div>

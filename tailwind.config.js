@@ -8,7 +8,8 @@ export default {
     extend: {
       colors: {
         'customOrange':  '#F19828',
-        'customBlue': '#484C7F'
+        'customBlue': '#484C7F',
+        'customPink': '#E05170'
       },
       backgroundImage: {
         'bannerBg': "url('/src/assets/page-turner.svg')"

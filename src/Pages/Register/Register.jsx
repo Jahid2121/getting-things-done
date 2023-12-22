@@ -173,7 +173,7 @@ const Register = () => {
             id=""
           />
         </div>
-        <p className="font-medium text-center">
+        <span className="font-medium text-center">
           Already have an account{" "}
           <Link className="text-customOrange font-medium" to="/login">
             Login
@@ -181,7 +181,7 @@ const Register = () => {
           <div className="text-3xl">
           <FaGoogle />
           </div>
-        </p>
+        </span>
       </form>
     </div>
   );
