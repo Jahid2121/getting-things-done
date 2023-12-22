@@ -17,7 +17,7 @@ const Dashboard = () => {
                     className="flex  items-center gap-3" 
                     to="/dashboard/task"
                   > 
-                   <FaTasks /> My Task
+                   <FaTasks /> To Do
                   </CustomNavLink>
                   <CustomNavLink
                     className="flex  items-center gap-3" 
