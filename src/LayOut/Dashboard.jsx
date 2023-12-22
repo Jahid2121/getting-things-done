@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import CustomNavLink from "../components/CustomNavLink";
 import Navbar from "../Shared/Navbar";
-import { FaTasks, FaUser } from "react-icons/fa";
+import { FaPlus, FaTasks, FaUser } from "react-icons/fa";
 
 const Dashboard = () => {
   return (
@@ -18,6 +18,12 @@ const Dashboard = () => {
                     to="/dashboard/task"
                   > 
                    <FaTasks /> My Task
+                  </CustomNavLink>
+                  <CustomNavLink
+                    className="flex  items-center gap-3" 
+                    to="/dashboard/createTask"
+                  > 
+                   <FaPlus /> Create Task
                   </CustomNavLink>
                 
                   

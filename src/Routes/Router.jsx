@@ -8,6 +8,7 @@ import Profile from "../Pages/Profile/Profile";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Task from "../Pages/Task/Task";
+import CreateTask from "../components/CreateTask/CreateTask";
 
 
 
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
         {
           path: '/dashboard/task',
           element: <Task />
+        },
+        {
+          path: '/dashboard/createTask',
+          element: <CreateTask />
         },
       ]
     }
