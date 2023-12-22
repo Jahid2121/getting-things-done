@@ -53,7 +53,7 @@ const Navbar = () => {
           </span>
         </li>
         <li className="mt-1 mb-1"><CustomNavLink to="/dashboard">DashBoard</CustomNavLink></li>
-        <li><CustomNavLink onClick={handleLogOut}>LogOut</CustomNavLink></li>
+        <li onClick={handleLogOut}><CustomNavLink >LogOut</CustomNavLink></li>
       </ul>
     </div>
       ) : (
