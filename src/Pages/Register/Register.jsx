@@ -5,6 +5,7 @@ import useAxiosPublic from "../../hooks/UseAxiosPublic";
 import UseAuth from "../../hooks/UseAuth";
 import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin";
 
 
 const Register = () => {
@@ -161,9 +162,10 @@ const Register = () => {
           <Link className="text-customOrange font-medium" to="/login">
             Login
           </Link>
-          <div className="text-3xl">
+          <SocialLogin />
+          {/* <div className="text-3xl">
           <FaGoogle />
-          </div>
+          </div> */}
         </span>
       </form>
     </div>

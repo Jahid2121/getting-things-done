@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
 import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
+import SocialLogin from "../../components/SocialLogin";
 
 
 const Login = () => {
@@ -95,15 +96,15 @@ const Login = () => {
             name=""
             id=""
           />
-          
-         <div onClick={handleGoogleLogin} className="flex hover:cursor-pointer items-center gap-3 border mt-3 ">
+          <SocialLogin />
+         {/* <div onClick={handleGoogleLogin} className="flex hover:cursor-pointer items-center gap-3 border mt-3 ">
          <div className="text-2xl m-2">
          <FaGoogle /> 
          </div>
          <span>
          Login With Google
          </span>
-         </div>
+         </div> */}
     <div className="flex justify-center">
     </div>
         </div>
