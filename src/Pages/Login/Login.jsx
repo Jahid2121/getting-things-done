@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import UseAuth from "../../hooks/UseAuth";
 import { FaGoogle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -30,7 +31,11 @@ const Login = () => {
         logIn(data.email, data.password)
         .then(data => {
             console.log(data.user);
-            
+            Swal.fire({
+              title: "Success!",
+              text: "User Logged in successfully!",
+              icon: "success"
+            });
               navigate(from, {replace: true})
         })
         .catch(err => {

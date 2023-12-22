@@ -4,21 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import useAxiosPublic from "../../hooks/UseAxiosPublic";
 import UseAuth from "../../hooks/UseAuth";
 import { FaGoogle } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
-<ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
-{/* Same as */}
-<ToastContainer />
+import Swal from "sweetalert2";
+
+
 const Register = () => {
   const { createUser, updateUserProfile } = UseAuth();
   const navigate = useNavigate()
@@ -45,16 +33,11 @@ const Register = () => {
             console.log(res.data);
             if(res.data.insertedId){
               reset()
-              toast('user Created', {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                });
+              Swal.fire({
+                title: "Success!",
+                text: "User created successfully!",
+                icon: "success"
+              });
               navigate('/')
               
             }

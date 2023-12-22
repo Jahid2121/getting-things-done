@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../hooks/UseAxiosPublic";
 import { FaPlusCircle } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const CreateTask = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -20,6 +21,11 @@ const CreateTask = () => {
 
     console.log(mealRes.data);
     if (mealRes.data.insertedId) {
+      Swal.fire({
+        title: "Done!",
+        text: "Task created successfully!",
+        icon: "success"
+      });
       reset();
     }
   };
