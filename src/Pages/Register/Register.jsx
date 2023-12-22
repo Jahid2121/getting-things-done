@@ -42,6 +42,7 @@ const Register = () => {
           }
           axiosPublic.post('/users', userData)
           .then(res => {
+            console.log(res.data);
             if(res.data.insertedId){
               reset()
               toast('user Created', {
@@ -71,8 +72,8 @@ const Register = () => {
   };
 
   return (
-    <div className="mt-16">
-      <form onSubmit={handleSubmit(onSubmit)} className="card-body w-1/2 mx-auto">
+    <div className="mt-16 bg-customBlue w-1/2 mx-auto text-white">
+      <form onSubmit={handleSubmit(onSubmit)} className="card-body mx-auto">
       <h2 className="flex justify-center text-3xl font-semibold mb-4">Join Us </h2>
         {/* name */}
         <div className="form-control">
@@ -101,7 +102,7 @@ const Register = () => {
             placeholder="photo url"
             name="photoURL"
             {...register("photoURL", { required: true })}
-            className="input input-bordered"
+            className="input text-black input-bordered"
           />
           {errors.photoURL && (
             <span className="text-red-800">photoURL is required</span>
@@ -120,7 +121,7 @@ const Register = () => {
             placeholder="email"
             name="email"
             {...register("email", { required: true })}
-            className="input input-bordered"
+            className="input text-black input-bordered"
           />
           {errors.email && (
             <span className="text-red-800">Email is required</span>
@@ -143,7 +144,7 @@ const Register = () => {
               pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z])/,
             })}
             placeholder="password"
-            className="input input-bordered"
+            className="input text-black input-bordered"
           />
           {errors.password?.type === "required" && (
             <p className="text-red-800">Password is required</p>
@@ -166,7 +167,7 @@ const Register = () => {
         <div className="form-control mt-6">
           <input
             value="Register"
-            className="btn btn-primary"
+            className="btn bg-white font-semibold text-2xl text-black"
             type="submit"
             name=""
             id=""
@@ -174,7 +175,7 @@ const Register = () => {
         </div>
         <p className="font-medium text-center">
           Already have an account{" "}
-          <Link className="text-customSalmon font-medium" to="/login">
+          <Link className="text-customOrange font-medium" to="/login">
             Login
           </Link>
           <div className="text-3xl">

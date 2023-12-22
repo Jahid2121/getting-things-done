@@ -1,7 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
+import UseAuth from "../hooks/UseAuth";
 
 const Navbar = () => {
+  const {user, logOut} = UseAuth()
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+  
   return (
     
 
@@ -28,9 +37,28 @@ const Navbar = () => {
         <li>
 
         </li>
-        <NavLink to="/login" className="">
-           Login
-        </NavLink>
+        {user ? (
+        <div className="dropdown text-black dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <span data-tooltip-id="User" data-tooltip-content="User Profile!">
+          <img alt={user?.displayName} src={user?.photoURL} />
+</span>
+        </div>
+      </div>
+      <ul className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <span className="justify-between mb-1">
+            {user?.displayName}
+          </span>
+        </li>
+        <li className="mt-1 mb-1"><NavLink to="/dashboard">DashBoard</NavLink></li>
+        <li><NavLink onClick={handleLogOut}>LogOut</NavLink></li>
+      </ul>
+    </div>
+      ) : (
+        <NavLink to="login">Join Us</NavLink>
+      )}
         <li>
           <NavLink href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-customOrange md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</NavLink>
         </li>

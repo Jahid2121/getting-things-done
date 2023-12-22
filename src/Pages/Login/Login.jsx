@@ -25,13 +25,7 @@ const Login = () => {
         logIn(data.email, data.password)
         .then(data => {
             console.log(data.user);
-            // Swal.fire({
-            //     position: "center",
-            //     icon: "success",
-            //     title: "User logged in successfully",
-            //     showConfirmButton: false,
-            //     timer: 1500
-            //   });
+            
               navigate(from, {replace: true})
         })
         .catch(err => {
@@ -44,7 +38,7 @@ const Login = () => {
 
 
   return (
-    <div className="mt-16">
+    <div className="mt-16 bg-customBlue w-1/2 mx-auto text-white">
       <form onSubmit={handleSubmit(onSubmit)} className="card-body w-1/2 mx-auto">
         <h2 className="flex justify-center text-3xl font-semibold mb-4">Login </h2>
         <div className="form-control">
@@ -56,7 +50,7 @@ const Login = () => {
             placeholder="email"
             name="email"
             {...register("email", { required: true })}
-            className="input input-bordered"
+            className="input text-black input-bordered"
           />
           {errors.email && (
             <span className="text-red-800">Email is required</span>
@@ -75,7 +69,7 @@ const Login = () => {
 
             })}
             placeholder="password"
-            className="input input-bordered"
+            className="input text-black input-bordered"
           />
           {errors.password?.type === "required" && (
             <p className="text-red-800">Password is required</p>
@@ -87,7 +81,7 @@ const Login = () => {
         <div className="form-control mt-6">
           <input
             value="Login"
-            className="bg-customSalmon p-1 rounded-xl text-2xl font-semibold text-white"
+            className="bg-white text-black p-1 rounded-xl text-2xl font-semibold "
             type="submit"
             name=""
             id=""
@@ -96,7 +90,7 @@ const Login = () => {
     <div className="flex justify-center">
     </div>
         </div>
-        <p className="font-medium text-center">New User? Join us Now <Link className="text-customSalmon font-medium" to="/register">Register</Link></p>
+        <p className="font-medium text-center">New User? Join us Now <Link className="text-customOrange font-medium" to="/register">Register</Link></p>
       </form>
     </div>
   );
